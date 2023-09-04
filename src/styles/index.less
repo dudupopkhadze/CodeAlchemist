@@ -1,4 +1,5 @@
 @import "./App.less";
+@import "./components/index.less";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,8 +17,32 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Make sure the HTML and Body take full height */
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   display: flex;
   place-items: center;
   min-width: 320px;
