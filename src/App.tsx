@@ -1,10 +1,11 @@
-import "./App.less";
+import { Footer, Header } from "./components";
 
 function App() {
   return (
-    <>
-      <div></div>
-    </>
+    <div className="app">
+      <Header />
+      <Footer />
+    </div>
   );
 }
 
