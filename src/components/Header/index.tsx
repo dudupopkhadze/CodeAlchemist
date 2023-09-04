@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <header>
-      <h1>Header</h1>
+      <h1>CodeAlchemist</h1>
     </header>
   );
 };
