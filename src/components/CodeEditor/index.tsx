@@ -2,6 +2,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { sublime } from "@uiw/codemirror-theme-sublime";
 import { useCodeContext } from "../../hooks";
+import { ControlPanel } from "../ControlPanel";
 
 export const CodeEditor = () => {
   const { code, setCode } = useCodeContext();
@@ -18,6 +19,7 @@ export const CodeEditor = () => {
           highlightActiveLineGutter: false,
         }}
       />
+      <ControlPanel />
     </div>
   );
 };

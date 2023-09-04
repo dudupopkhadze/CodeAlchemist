@@ -10,12 +10,19 @@ export const CodeContext = React.createContext<ICodeContext | undefined>(
   undefined
 );
 
+const startingValue = `const log = () => console.log("TEST -----")
+log()
+log()
+log()
+log()
+log()`;
+
 export const CodeContextProvider = ({
   children,
 }: {
   children: React.ReactElement;
 }) => {
-  const [code, setCode] = React.useState<string>("");
+  const [code, setCode] = React.useState<string>(startingValue);
   const [result, setResult] = React.useState<ICodeContext["result"]>({
     error: "",
     result: "",

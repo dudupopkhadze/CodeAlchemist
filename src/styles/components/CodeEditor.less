@@ -1,15 +1,24 @@
 .CodeEditor {
   flex: 1; /* Each takes 50% of the width */
-
   overflow: auto; /* For scrolling */
-  border-right: 1px solid #4f4f4f; /* Optional separator */
+  flex-direction: column;
+  position: relative;
+  .flex();
 }
 
 .cm-theme {
-  height: 100%;
+  flex: 1;
   font-size: 18px;
 }
 
 .cm-editor {
   height: 100%;
+}
+
+.ͼ16 {
+  background-color: #282c34;
+}
+
+.ͼ16 .cm-gutters {
+  background-color: #282c34;
 }

@@ -1,19 +1,27 @@
 .ControlPanel {
   height: 75px;
+  background-color: #2d2d2d;
   .flexRow();
 }
 
 .run {
-  background-color: rgb(132, 215, 132);
-  padding: 8px 24px;
-  outline: none;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+  background: #53b311;
+  box-shadow: 0px 1px 0px 0px #29940d, 0px -1px 0px 0px #9cd418 inset,
+    0px 1px 1px 0px #858585;
+  border-radius: 4px;
+  transition: all 0s 0;
+  padding: 5px 15px;
+  margin: 5px 0px;
+  border-color: #29940d;
+  border-width: 1px;
+  border-style: solid;
+  color: #fff;
+  font-weight: 100;
+  font-style: normal;
+  z-index: 99;
   transition: background-color 0.5s ease-in-out;
-  &:hover {
-    background-color: rgb(159, 29, 94);
-    font-weight: 700;
-  }
 }
