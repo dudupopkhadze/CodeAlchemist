@@ -11,14 +11,28 @@ console.log(bg);
 `;
 
 export const CodeEditor = () => {
+  const [value, setValue] = React.useState(startingValue);
   const onChange = React.useCallback((value: string) => {
-    console.log("value:", value);
+    setValue(value);
   }, []);
+
+  const run = () => {
+    fetch("http://localhost:8000/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ code: value }),
+    })
+      .then((r) => r.json())
+      .then((res) => console.log(res));
+  };
 
   return (
     <div className="CodeEditor">
+      <button onClick={run}>Run</button>
       <CodeMirror
-        value={startingValue}
+        value={value}
         theme={sublime}
         extensions={[javascript({ jsx: true })]}
         onChange={onChange}
