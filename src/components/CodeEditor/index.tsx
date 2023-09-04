@@ -1,40 +1,18 @@
-import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { sublime } from "@uiw/codemirror-theme-sublime";
-
-const startingValue = `const bg = () => {
-  console.log(this.name + '  hello');
-};
-
-console.log(bg);
-`;
+import { useCodeContext } from "../../hooks";
 
 export const CodeEditor = () => {
-  const [value, setValue] = React.useState(startingValue);
-  const onChange = React.useCallback((value: string) => {
-    setValue(value);
-  }, []);
-
-  // const run = () => {
-  //   fetch("http://localhost:8000/", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ code: value }),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((res) => console.log(res));
-  // };
+  const { code, setCode } = useCodeContext();
 
   return (
     <div className="CodeEditor">
       <CodeMirror
-        value={value}
+        value={code}
         theme={sublime}
         extensions={[javascript({ jsx: true })]}
-        onChange={onChange}
+        onChange={(v) => setCode(v.toString())}
         basicSetup={{
           highlightActiveLine: false,
           highlightActiveLineGutter: false,

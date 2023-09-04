@@ -1,14 +1,20 @@
-import { CodeEditor, ControlPanel, Footer, Header, Output } from "./components";
+import { CodeEditor, ControlPanel, Header, Output } from "./components";
+import { CodeContextProvider } from "./contexts";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <ControlPanel />
-      <div className="main">
-        <CodeEditor />
-        <Output />
-      </div>
+      <CodeContextProvider>
+        <>
+          <ControlPanel />
+          <div className="main">
+            <CodeEditor />
+            <Output />
+          </div>
+        </>
+      </CodeContextProvider>
+
       {/* <Footer /> */}
     </div>
   );
